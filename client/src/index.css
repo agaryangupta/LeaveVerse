@@ -1,0 +1,27 @@
+@import "tailwindcss";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Inter, sans-serif;
+  background-color: #f8fafc;
+}
+
+/* Hide Microsoft Edge password reveal icon */
+input::-ms-reveal,
+input::-ms-clear {
+    display: none;
+}
+
+/* ===========================
+   Dark Mode Date Picker Icon
+=========================== */
+
+.dark input[type="date"]::-webkit-calendar-picker-indicator {
+    filter: invert(1) brightness(2);
+    cursor: pointer;
+}
