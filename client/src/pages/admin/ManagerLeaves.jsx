@@ -9,6 +9,7 @@ function ManagerLeaves() {
 
     const [leaves, setLeaves] = useState([]);
     const [loadingId, setLoadingId] = useState(null);
+    const [loadingAction, setLoadingAction] = useState("");
 
     const { theme } = useTheme();
 
@@ -49,6 +50,7 @@ function ManagerLeaves() {
         if (loadingId) return;
 
         setLoadingId(leaveId);
+        setLoadingAction(status);
 
         try {
 
@@ -79,6 +81,7 @@ function ManagerLeaves() {
         } finally {
 
             setLoadingId(null);
+            setLoadingAction("");
 
         }
 
@@ -206,14 +209,17 @@ function ManagerLeaves() {
                                                                     "Approved"
                                                                 )
                                                             }
-                                                            disabled={loadingId === leave._id}
-                                                            className={`text-white px-4 py-2 rounded-lg transition-all duration-300 disabled:opacity-60 disabled:cursor-not-allowed ${theme === "dark"
-                                                                    ? "bg-emerald-600 hover:bg-emerald-700"
-                                                                    : "bg-green-600 hover:bg-green-700"
+                                                            disabled={
+                                                                loadingId === leave._id &&
+                                                                loadingAction === "Approved"
+                                                            } className={`w-28 text-white py-2 flex justify-center items-center rounded-lg transition-all duration-300 disabled:opacity-60 disabled:cursor-not-allowed ${theme === "dark"
+                                                                ? "bg-emerald-600 hover:bg-emerald-700"
+                                                                : "bg-green-600 hover:bg-green-700"
                                                                 }`}
                                                         >
-                                                            {loadingId === leave._id
-                                                                ? "Approving..."
+                                                            {loadingId === leave._id &&
+                                                                loadingAction === "Approved"
+                                                                ? "Accepting"
                                                                 : "Approve"}
                                                         </button>
 
@@ -224,13 +230,16 @@ function ManagerLeaves() {
                                                                     "Rejected"
                                                                 )
                                                             }
-                                                            disabled={loadingId === leave._id}
-                                                            className={`text-white px-4 py-2 rounded-lg transition-all duration-300 disabled:opacity-60 disabled:cursor-not-allowed ${theme === "dark"
-                                                                    ? "bg-red-500 hover:bg-red-600"
-                                                                    : "bg-red-600 hover:bg-red-700"
+                                                            disabled={
+                                                                loadingId === leave._id &&
+                                                                loadingAction === "Rejected"
+                                                            } className={`w-28 text-white py-2 flex justify-center items-center rounded-lg transition-all duration-300 disabled:opacity-60 disabled:cursor-not-allowed ${theme === "dark"
+                                                                ? "bg-red-500 hover:bg-red-600"
+                                                                : "bg-red-600 hover:bg-red-700"
                                                                 }`}                                                        >
-                                                            {loadingId === leave._id
-                                                                ? "Rejecting..."
+                                                            {loadingId === leave._id &&
+                                                                loadingAction === "Rejected"
+                                                                ? "Rejecting"
                                                                 : "Reject"}
                                                         </button>
 
