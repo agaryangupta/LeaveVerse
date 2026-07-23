@@ -7,6 +7,7 @@ const crypto = require("crypto");
 const sendEmail = require("../services/emailService");
 const welcomeEmail = require("../templates/welcomeEmail");
 const generateTemporaryPassword = require("../utils/generateTemporaryPassword");
+const resetPasswordEmail = require("../templates/resetPasswordEmail");
 
 // ===============================
 // Create Employee / Manager
@@ -416,12 +417,8 @@ const forgotPassword = async (req, res) => {
 
     await sendEmail({
       to: user.email,
-      subject: "Password Reset Request",
-      html: `
-        <h2>Password Reset</h2>
-        <p>Hello ${user.fullName}</p>
-        <a href="${resetUrl}">Reset Password</a>
-      `,
+      subject: "Reset Your LeaveVerse Password 🔐",
+      html: resetPasswordEmail(user.fullName, resetUrl),
     });
 
     console.log("5. Email sent");
