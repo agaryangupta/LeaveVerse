@@ -208,8 +208,10 @@ function TeamLeaves() {
                                                                     "Approved"
                                                                 )
                                                             }
-                                                            disabled={loadingId === leave._id}
-                                                            className={`text-white px-4 py-2 rounded-lg transition-all duration-300 disabled:opacity-60 disabled:cursor-not-allowed ${theme === "dark"
+                                                            disabled={
+                                                                loadingId === leave._id &&
+                                                                loadingAction === "Approved"
+                                                            } className={`text-white px-4 py-2 rounded-lg transition-all duration-300 disabled:opacity-60 disabled:cursor-not-allowed ${theme === "dark"
                                                                 ? "bg-emerald-600 hover:bg-emerald-700"
                                                                 : "bg-green-700 hover:bg-green-800"
                                                                 }`}
@@ -226,13 +228,15 @@ function TeamLeaves() {
                                                                     "Rejected"
                                                                 )
                                                             }
-                                                            disabled={loadingId === leave._id && loadingAction === "Rejected"}
-                                                            className={`text-white px-4 py-2 rounded-lg transition-all duration-300 disabled:opacity-60 disabled:cursor-not-allowed ${theme === "dark"
+                                                            disabled={
+                                                                loadingId === leave._id &&
+                                                                loadingAction === "Rejected"
+                                                            } className={`text-white px-4 py-2 rounded-lg transition-all duration-300 disabled:opacity-60 disabled:cursor-not-allowed ${theme === "dark"
                                                                 ? "bg-red-500 hover:bg-red-600"
                                                                 : "bg-red-700 hover:bg-red-800"
                                                                 }`}
                                                         >
-                                                            {loadingId === leave._id
+                                                            {loadingId === leave._id && loadingAction === "Rejected"
                                                                 ? "Rejecting..."
                                                                 : "Reject"}
                                                         </button>
