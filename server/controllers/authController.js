@@ -403,33 +403,14 @@ const forgotPassword = async (req, res) => {
     user.resetPasswordExpires = Date.now() + 15 * 60 * 1000;
 
     await user.save();
-    const resetUrl = `${process.env.CLIENT_URL}/reset-password/${resetToken}`;
-    await sendEmail({
-      to: user.email,
-      subject: "Password Reset Request",
-      html: `
-        <h2>Password Reset</h2>
 
-        <p>Hello ${user.fullName},</p>
+    console.log("Reset token generated:", resetToken);
 
-        <p>You requested to reset your password.</p>
-
-        <p>
-            Click the link below to create a new password:
-        </p>
-
-        <a href="${resetUrl}">
-            Reset Password
-        </a>
-
-        <p>This link will expire in 15 minutes.</p>
-
-        <p>If you did not request this, please ignore this email.</p>
-    `,
-    });
+    // EMAIL DISABLED TEMPORARILY
 
     return res.status(200).json({
-      message: "Password reset link has been sent to your email.",
+      message: "Forgot Password API is working.",
+      token: resetToken,
     });
 
   } catch (error) {
