@@ -1,54 +1,61 @@
-const nodemailer = require("nodemailer");
-
-const transporter = nodemailer.createTransport({
-  host: process.env.BREVO_SMTP_HOST,
-  port: Number(process.env.BREVO_SMTP_PORT),
-  secure: false,
-  auth: {
-    user: process.env.BREVO_SMTP_LOGIN,
-    pass: process.env.BREVO_SMTP_PASSWORD,
-  },
-});
+const https = require("https");
 
 const sendEmail = async ({ to, subject, html }) => {
-  try {
-    console.log("========== EMAIL DEBUG ==========");
-    console.log("To:", to);
-    console.log("From:", process.env.BREVO_SMTP_LOGIN);
-    console.log("SMTP Host:", process.env.BREVO_SMTP_HOST);
-    console.log("SMTP Port:", process.env.BREVO_SMTP_PORT);
-
-    const info = await transporter.sendMail({
-      from: `"LeaveVerse" <${process.env.BREVO_SMTP_LOGIN}>`,
-      to,
+  return new Promise((resolve, reject) => {
+    const data = JSON.stringify({
+      sender: {
+        name: "LeaveVerse",
+        email: "veloradigital60@gmail.com",
+      },
+      to: [
+        {
+          email: to,
+        },
+      ],
       subject,
-      html,
+      htmlContent: html,
     });
 
-    console.log("✅ Email sent successfully.");
-    console.log("Message ID:", info.messageId);
-    console.log("Response:", info.response);
-    console.log("================================");
+    const options = {
+      hostname: "api.brevo.com",
+      port: 443,
+      path: "/v3/smtp/email",
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "api-key": process.env.BREVO_API_KEY,
+        "Content-Length": Buffer.byteLength(data),
+      },
+    };
 
-  } catch (error) {
-    console.error("========== EMAIL ERROR ==========");
-    console.error("Message:", error.message);
-    console.error("Code:", error.code);
-    console.error("Command:", error.command);
+    const req = https.request(options, (res) => {
+      let body = "";
 
-    if (error.response) {
-      console.error("Response:", error.response);
-    }
+      res.on("data", (chunk) => {
+        body += chunk;
+      });
 
-    if (error.responseCode) {
-      console.error("Response Code:", error.responseCode);
-    }
+      res.on("end", () => {
+        console.log("Brevo Status:", res.statusCode);
+        console.log("Brevo Response:", body);
 
-    console.error("Full Error:", error);
-    console.error("=================================");
+        if (res.statusCode >= 200 && res.statusCode < 300) {
+          console.log("✅ Email sent successfully.");
+          resolve();
+        } else {
+          reject(new Error(body));
+        }
+      });
+    });
 
-    throw error;
-  }
+    req.on("error", (err) => {
+      console.error("❌ HTTPS Error:", err);
+      reject(err);
+    });
+
+    req.write(data);
+    req.end();
+  });
 };
 
 module.exports = sendEmail;
