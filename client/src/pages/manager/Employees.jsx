@@ -100,22 +100,22 @@ function ManagerEmployees() {
 
                     {/* Table */}
 
-                    <div className={`rounded-xl shadow-xl border overflow-x-auto transition-colors duration-300 ${theme === "dark"
+                    <div className={`rounded-xl shadow-xl border overflow-hidden transition-colors duration-300 ${theme === "dark"
                         ? "bg-slate-900 border-slate-700"
                         : "bg-white border-slate-200"
                         }`}>
 
-                        <table className="min-w-[900px] w-full">
+                        <table className="w-full table-fixed">
 
                             <thead>
 
                                 <tr className="bg-linear-to-r from-blue-600 to-cyan-500 text-white">
 
-                                    <th className="px-8 py-5 text-left font-semibold">
+                                    <th className="w-1/2 px-4 py-4 text-left font-semibold">
                                         Employee ID
                                     </th>
 
-                                    <th className="px-8 py-5 text-left font-semibold">
+                                    <th className="w-1/2 px-4 py-4 text-left font-semibold">
                                         Name
                                     </th>
 
@@ -165,8 +165,8 @@ function ManagerEmployees() {
 
                                             <td
                                                 className={`hidden md:table-cell px-8 py-5 transition-colors duration-300 ${theme === "dark"
-                                                        ? "text-slate-300"
-                                                        : "text-slate-600"
+                                                    ? "text-slate-300"
+                                                    : "text-slate-600"
                                                     }`}
                                             >
                                                 {employee.email}
@@ -174,8 +174,8 @@ function ManagerEmployees() {
 
                                             <td
                                                 className={`hidden lg:table-cell px-8 py-5 transition-colors duration-300 ${theme === "dark"
-                                                        ? "text-slate-300"
-                                                        : "text-slate-600"
+                                                    ? "text-slate-300"
+                                                    : "text-slate-600"
                                                     }`}
                                             >
                                                 {employee.department}
@@ -183,8 +183,8 @@ function ManagerEmployees() {
 
                                             <td
                                                 className={`hidden lg:table-cell px-8 py-5 transition-colors duration-300 ${theme === "dark"
-                                                        ? "text-slate-300"
-                                                        : "text-slate-600"
+                                                    ? "text-slate-300"
+                                                    : "text-slate-600"
                                                     }`}
                                             >
                                                 {employee.designation}
