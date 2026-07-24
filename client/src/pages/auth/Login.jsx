@@ -58,13 +58,13 @@ function Login() {
     };
 
     return (
-<div className="relative min-h-screen flex items-start lg:items-center justify-center overflow-hidden bg-linear-to-br from-slate-900 via-blue-900 to-slate-800 px-4 sm:px-6 py-4 lg:py-12">
+        <div className="relative min-h-screen flex items-start lg:items-center justify-center overflow-hidden bg-linear-to-br from-slate-900 via-blue-900 to-slate-800 px-4 sm:px-6 py-4 lg:py-12">
             {/* Background Blur */}
             <div className="absolute top-0 left-0 w-96 h-96 bg-blue-500/20 rounded-full blur-3xl"></div>
             <div className="absolute bottom-0 right-0 w-96 h-96 bg-cyan-400/20 rounded-full blur-3xl"></div>
 
             {/* Main Card */}
-<div className="relative w-full max-w-7xl min-h-fit lg:h-160 overflow-hidden rounded-3xl bg-white/10 backdrop-blur-xl border border-white/20 shadow-2xl grid lg:grid-cols-[1fr_1.1fr]">                {/* LEFT PANEL */}
+            <div className="relative w-full max-w-7xl min-h-fit lg:h-160 overflow-hidden rounded-3xl bg-white/10 backdrop-blur-xl border border-white/20 shadow-2xl grid lg:grid-cols-[1fr_1.1fr]">                {/* LEFT PANEL */}
                 <div className="hidden lg:flex flex-col justify-center items-center bg-linear-to-br from-blue-700 to-slate-900 text-white px-16 py-16">
 
                     {/* Logo + Brand */}
