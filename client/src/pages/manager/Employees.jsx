@@ -76,8 +76,8 @@ function ManagerEmployees() {
 
                         <div
                             className={`w-full lg:w-auto rounded-xl shadow-xl border px-6 py-5 text-center transition-colors duration-300 ${theme === "dark"
-                                    ? "bg-slate-900 border-slate-700"
-                                    : "bg-white border-slate-200"
+                                ? "bg-slate-900 border-slate-700"
+                                : "bg-white border-slate-200"
                                 }`}
                         >
 
@@ -119,15 +119,15 @@ function ManagerEmployees() {
                                         Name
                                     </th>
 
-                                    <th className="px-8 py-5 text-left font-semibold">
+                                    <th className="hidden md:table-cell px-8 py-5 text-left font-semibold">
                                         Email
                                     </th>
 
-                                    <th className="px-8 py-5 text-left font-semibold">
+                                    <th className="hidden lg:table-cell px-8 py-5 text-left font-semibold">
                                         Department
                                     </th>
 
-                                    <th className="px-8 py-5 text-left font-semibold">
+                                    <th className="hidden lg:table-cell px-8 py-5 text-left font-semibold">
                                         Designation
                                     </th>
 
@@ -163,24 +163,30 @@ function ManagerEmployees() {
                                                 {employee.fullName}
                                             </td>
 
-                                            <td className={`px-8 py-5 transition-colors duration-300 ${theme === "dark"
-                                                ? "text-slate-300"
-                                                : "text-slate-600"
-                                                }`}>
+                                            <td
+                                                className={`hidden md:table-cell px-8 py-5 transition-colors duration-300 ${theme === "dark"
+                                                        ? "text-slate-300"
+                                                        : "text-slate-600"
+                                                    }`}
+                                            >
                                                 {employee.email}
                                             </td>
 
-                                            <td className={`px-8 py-5 transition-colors duration-300 ${theme === "dark"
-                                                ? "text-slate-300"
-                                                : "text-slate-600"
-                                                }`}>
+                                            <td
+                                                className={`hidden lg:table-cell px-8 py-5 transition-colors duration-300 ${theme === "dark"
+                                                        ? "text-slate-300"
+                                                        : "text-slate-600"
+                                                    }`}
+                                            >
                                                 {employee.department}
                                             </td>
 
-                                            <td className={`px-8 py-5 transition-colors duration-300 ${theme === "dark"
-                                                ? "text-slate-300"
-                                                : "text-slate-600"
-                                                }`}>
+                                            <td
+                                                className={`hidden lg:table-cell px-8 py-5 transition-colors duration-300 ${theme === "dark"
+                                                        ? "text-slate-300"
+                                                        : "text-slate-600"
+                                                    }`}
+                                            >
                                                 {employee.designation}
                                             </td>
 
