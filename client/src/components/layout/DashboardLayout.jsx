@@ -8,12 +8,11 @@ function DashboardLayout({ children }) {
 
     return (
         <div
-    className={`min-h-screen transition-colors duration-300 ${
-        theme === "dark"
-            ? "bg-slate-950"
-            : "bg-slate-100"
-    }`}
->
+            className={`min-h-screen transition-colors duration-300 ${theme === "dark"
+                    ? "bg-slate-950"
+                    : "bg-slate-100"
+                }`}
+        >
 
             <div className="flex">
 
@@ -27,7 +26,7 @@ function DashboardLayout({ children }) {
                     <Navbar />
 
                     {/* Page Content */}
-                    <div className="px-8 pt-10 pb-8">
+                    <div className="px-4 sm:px-6 lg:px-8 pt-6 sm:pt-8 lg:pt-10 pb-6 sm:pb-8">
                         {children}
                     </div>
 
