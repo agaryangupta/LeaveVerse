@@ -100,12 +100,12 @@ function ManagerEmployees() {
 
                     {/* Table */}
 
-                    <div className={`rounded-xl shadow-xl border overflow-hidden transition-colors duration-300 ${theme === "dark"
+                    <div className={`rounded-xl shadow-xl border overflow-x-auto transition-colors duration-300 ${theme === "dark"
                         ? "bg-slate-900 border-slate-700"
                         : "bg-white border-slate-200"
                         }`}>
 
-                        <table className="w-full">
+                        <table className="min-w-225 w-full">
 
                             <thead>
 
