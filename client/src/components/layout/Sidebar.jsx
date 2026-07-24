@@ -52,7 +52,7 @@ function Sidebar({ sidebarOpen, setSidebarOpen }) {
             )}
 
             <div
-                className={`fixed lg:fixed top-0 left-0 h-screen w-64 flex flex-col justify-between z-50 transform transition-transform duration-300
+                className={`fixed lg:relative top-0 left-0 h-screen lg:min-h-screen w-64 flex flex-col justify-between z-50 transform transition-transform duration-300
         ${sidebarOpen
                         ? "translate-x-0"
                         : "-translate-x-full lg:translate-x-0"
