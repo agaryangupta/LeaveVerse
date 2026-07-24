@@ -58,12 +58,16 @@ function Login() {
     };
 
     return (
-        <div className="relative min-h-screen flex items-center justify-center overflow-hidden bg-linear-to-br from-slate-900 via-blue-900 to-slate-800 px-4 sm:px-6 py-6 lg:py-12">            {/* Background Blur */}
+        <div className="relative min-h-screen flex items-center justify-center overflow-hidden bg-linear-to-br from-slate-900 via-blue-900 to-slate-800 px-6 py-12">
+
+            {/* Background Blur */}
             <div className="absolute top-0 left-0 w-96 h-96 bg-blue-500/20 rounded-full blur-3xl"></div>
             <div className="absolute bottom-0 right-0 w-96 h-96 bg-cyan-400/20 rounded-full blur-3xl"></div>
 
             {/* Main Card */}
-            <div className="relative w-full max-w-7xl overflow-hidden rounded-3xl bg-white/10 backdrop-blur-xl border border-white/20 shadow-2xl grid lg:grid-cols-[1fr_1.1fr]">                {/* LEFT PANEL */}
+            <div className="relative w-full max-w-7xl h-160 overflow-hidden rounded-3xl bg-white/10 backdrop-blur-xl border border-white/20 shadow-2xl grid lg:grid-cols-[1fr_1.1fr]">
+
+                {/* LEFT PANEL */}
                 <div className="hidden lg:flex flex-col justify-center items-center bg-linear-to-br from-blue-700 to-slate-900 text-white px-16 py-16">
 
                     {/* Logo + Brand */}
@@ -86,11 +90,11 @@ function Login() {
                         manage leave requests, approvals, balances, and
                         attendance from one centralized system.
                     </p>
-                    <br></br>
+<br></br>
                     {/* Features */}
                     <div className="mt-14 pt-8 border-t border-white/20 space-y-6 text-lg w-full max-w-sm">
 
-                        <br></br>
+                    <br></br>
 
                         <div className="flex items-center justify-center gap-3">
                             <div className="w-3 h-3 rounded-full bg-cyan-300"></div>
@@ -107,20 +111,22 @@ function Login() {
                 </div>
 
                 {/* RIGHT PANEL */}
-                <div className="bg-white flex items-center justify-center px-6 sm:px-10 lg:px-16 py-10 lg:py-16">
-                    <div className="w-full max-w-xl px-0 lg:px-10">
+                <div className="bg-white flex items-center justify-center px-16 py-16">
+
+                    <div className="w-full max-w-xl px-10">
+
                         {/* Heading */}
-                        <div className="text-center mb-8 lg:mb-14">
+                        <div className="text-center mb-14">
 
                             <div className="lg:hidden text-5xl mb-4">
                                 🏢
                             </div>
 
-                            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-800">
+                            <h2 className="text-5xl font-bold text-slate-800">
                                 Welcome Back
                             </h2>
 
-                            <p className="mt-2 text-base sm:text-lg text-slate-500">
+                            <p className="mt-3 text-lg text-slate-500">
                                 Sign in to continue to your account
                             </p>
 
