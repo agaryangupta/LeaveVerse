@@ -47,7 +47,7 @@ function ManagerEmployees() {
             <br />
             <br />
 
-            <div className="flex justify-center">
+            <div className="w-full flex justify-center">
 
                 <div className="w-full max-w-6xl">
 
@@ -105,7 +105,7 @@ function ManagerEmployees() {
                         : "bg-white border-slate-200"
                         }`}>
 
-                        <table className="min-w-225 w-full">
+                        <table className="min-w-[900px] w-full">
 
                             <thead>
 
