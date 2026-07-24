@@ -119,18 +119,17 @@ function Employees() {
                                         Name
                                     </th>
 
-                                    <th className="px-8 py-5 text-left font-semibold">
+                                    <th className="hidden md:table-cell px-8 py-5 text-left font-semibold">
                                         Email
                                     </th>
 
-                                    <th className="px-8 py-5 text-left font-semibold">
+                                    <th className="hidden lg:table-cell px-8 py-5 text-left font-semibold">
                                         Department
                                     </th>
 
-                                    <th className="px-8 py-5 text-left font-semibold">
+                                    <th className="hidden lg:table-cell px-8 py-5 text-left font-semibold">
                                         Designation
                                     </th>
-
                                 </tr>
 
                             </thead>
@@ -163,24 +162,30 @@ function Employees() {
                                                 {employee.fullName}
                                             </td>
 
-                                            <td className={`px-8 py-5 transition-colors duration-300 ${theme === "dark"
-                                                ? "text-slate-300"
-                                                : "text-slate-600"
-                                                }`}>
+                                            <td
+                                                className={`hidden md:table-cell px-8 py-5 transition-colors duration-300 ${theme === "dark"
+                                                        ? "text-slate-300"
+                                                        : "text-slate-600"
+                                                    }`}
+                                            >
                                                 {employee.email}
                                             </td>
 
-                                            <td className={`px-8 py-5 transition-colors duration-300 ${theme === "dark"
-                                                ? "text-slate-300"
-                                                : "text-slate-600"
-                                                }`}>
+                                            <td
+                                                className={`hidden lg:table-cell px-8 py-5 transition-colors duration-300 ${theme === "dark"
+                                                        ? "text-slate-300"
+                                                        : "text-slate-600"
+                                                    }`}
+                                            >
                                                 {employee.department}
                                             </td>
 
-                                            <td className={`px-8 py-5 transition-colors duration-300 ${theme === "dark"
-                                                ? "text-slate-300"
-                                                : "text-slate-600"
-                                                }`}>
+                                            <td
+                                                className={`hidden lg:table-cell px-8 py-5 transition-colors duration-300 ${theme === "dark"
+                                                        ? "text-slate-300"
+                                                        : "text-slate-600"
+                                                    }`}
+                                            >
                                                 {employee.designation}
                                             </td>
 
