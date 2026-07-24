@@ -9,12 +9,27 @@
 body {
   font-family: Inter, sans-serif;
   background-color: #f8fafc;
+  color: #0f172a;
 }
 
+html.dark body {
+  background-color: #020617;
+  color: #f8fafc;
+}
 /* Hide Microsoft Edge password reveal icon */
 input::-ms-reveal,
 input::-ms-clear {
     display: none;
+}
+
+html,
+body,
+#root {
+  min-height: 100%;
+}
+
+#root {
+  background: inherit;
 }
 
 /* ===========================
