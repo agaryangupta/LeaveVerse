@@ -24,8 +24,7 @@ function DashboardLayout({ children }) {
                 />
 
                 {/* Main Content */}
-                <main className="flex-1 lg:ml-72">
-
+                <main className="flex-1 lg:ml-64">
                     {/* Navbar */}
                     <Navbar
                         sidebarOpen={sidebarOpen}

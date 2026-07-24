@@ -95,7 +95,7 @@ function Navbar({ sidebarOpen, setSidebarOpen }) {
                                 : "bg-slate-200 border-slate-200"
                         }`}
                     >
-                        <div className="flex h-11 w-11 items-center justify-center rounded-full bg-gradient-to-r from-blue-600 to-cyan-500">
+                        <div className="flex h-11 w-11 items-center justify-center rounded-full bg-linear-to-r from-blue-600 to-cyan-500">
                             <UserCircle2
                                 size={24}
                                 className="text-white"
