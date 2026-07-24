@@ -48,26 +48,25 @@ function Managers() {
             <br />
             <br />
 
-            <div className="flex justify-center">
+            <div className="w-full flex justify-center">
 
                 <div className="w-full max-w-6xl">
 
                     {/* Heading */}
 
-                    <div className="flex items-center justify-between mb-10">
-
+                    <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6 mb-10">
                         <div>
 
                             <h1 className={`text-4xl font-bold transition-colors duration-300 ${theme === "dark"
-                                    ? "text-white"
-                                    : "text-slate-800"
+                                ? "text-white"
+                                : "text-slate-800"
                                 }`}>
                                 Managers
                             </h1>
 
                             <p className={`mt-3 text-lg transition-colors duration-300 ${theme === "dark"
-                                    ? "text-slate-400"
-                                    : "text-slate-500"
+                                ? "text-slate-400"
+                                : "text-slate-500"
                                 }`}>
                                 Manage all managers in the organization.
                             </p>
@@ -76,14 +75,15 @@ function Managers() {
 
                         {/* Total Managers */}
 
-                        <div className={`rounded-xl shadow-xl border px-6 py-5 min-w-47.5 text-center transition-colors duration-300 ${theme === "dark"
+                        <div
+                            className={`w-full lg:w-auto rounded-xl shadow-xl border px-6 py-5 text-center transition-colors duration-300 ${theme === "dark"
                                 ? "bg-slate-900 border-slate-700"
                                 : "bg-white border-slate-200"
-                            }`}>
+                                }`}>
 
                             <p className={`text-sm transition-colors duration-300 ${theme === "dark"
-                                    ? "text-slate-400"
-                                    : "text-slate-500"
+                                ? "text-slate-400"
+                                : "text-slate-500"
                                 }`}>
                                 Total Managers
                             </p>
@@ -100,12 +100,12 @@ function Managers() {
 
                     {/* Table */}
 
-                    <div className={`rounded-xl shadow-xl border overflow-hidden transition-colors duration-300 ${theme === "dark"
-                            ? "bg-slate-900 border-slate-700"
-                            : "bg-white border-slate-200"
+                    <div className={`w-full rounded-xl shadow-xl border overflow-hidden transition-colors duration-300 ${theme === "dark"
+                        ? "bg-slate-900 border-slate-700"
+                        : "bg-white border-slate-200"
                         }`}>
 
-                        <table className="w-full">
+                        <table className="w-full table-fixed">
 
                             <thead>
 
@@ -119,15 +119,14 @@ function Managers() {
                                         Name
                                     </th>
 
-                                    <th className="px-8 py-5 text-left font-semibold">
+                                    <th className="hidden md:table-cell px-8 py-5 text-left font-semibold">
                                         Email
                                     </th>
 
-                                    <th className="px-8 py-5 text-left font-semibold">
+                                    <th className="hidden lg:table-cell px-8 py-5 text-left font-semibold">
                                         Department
                                     </th>
-
-                                    <th className="px-8 py-5 text-left font-semibold">
+                                    <th className="hidden lg:table-cell px-8 py-5 text-left font-semibold">
                                         Designation
                                     </th>
 
@@ -144,43 +143,49 @@ function Managers() {
                                         <tr
                                             key={manager._id}
                                             className={`border-b transition-all duration-300 ${theme === "dark"
-                                                    ? "border-slate-700 hover:bg-slate-800"
-                                                    : "border-slate-100 hover:bg-blue-50"
+                                                ? "border-slate-700 hover:bg-slate-800"
+                                                : "border-slate-100 hover:bg-blue-50"
                                                 }`}
                                         >
 
                                             <td className={`px-8 py-5 font-medium transition-colors duration-300 ${theme === "dark"
-                                                    ? "text-white"
-                                                    : "text-slate-700"
+                                                ? "text-white"
+                                                : "text-slate-700"
                                                 }`}>
                                                 {manager.employeeId}
                                             </td>
 
                                             <td className={`px-8 py-5 transition-colors duration-300 ${theme === "dark"
-                                                    ? "text-slate-200"
-                                                    : "text-slate-700"
+                                                ? "text-slate-200"
+                                                : "text-slate-700"
                                                 }`}>
                                                 {manager.fullName}
                                             </td>
 
-                                            <td className={`px-8 py-5 transition-colors duration-300 ${theme === "dark"
-                                                    ? "text-slate-300"
-                                                    : "text-slate-600"
-                                                }`}>
+                                            <td
+                                                className={`hidden md:table-cell px-8 py-5 transition-colors duration-300 ${theme === "dark"
+                                                        ? "text-slate-300"
+                                                        : "text-slate-600"
+                                                    }`}
+                                            >
                                                 {manager.email}
                                             </td>
 
-                                            <td className={`px-8 py-5 transition-colors duration-300 ${theme === "dark"
-                                                    ? "text-slate-300"
-                                                    : "text-slate-600"
-                                                }`}>
+                                            <td
+                                                className={`hidden lg:table-cell px-8 py-5 transition-colors duration-300 ${theme === "dark"
+                                                        ? "text-slate-300"
+                                                        : "text-slate-600"
+                                                    }`}
+                                            >
                                                 {manager.department}
                                             </td>
 
-                                            <td className={`px-8 py-5 transition-colors duration-300 ${theme === "dark"
-                                                    ? "text-slate-300"
-                                                    : "text-slate-600"
-                                                }`}>
+                                            <td
+                                                className={`hidden lg:table-cell px-8 py-5 transition-colors duration-300 ${theme === "dark"
+                                                        ? "text-slate-300"
+                                                        : "text-slate-600"
+                                                    }`}
+                                            >
                                                 {manager.designation}
                                             </td>
 
@@ -195,8 +200,8 @@ function Managers() {
                                         <td
                                             colSpan="5"
                                             className={`py-16 text-center text-lg transition-colors duration-300 ${theme === "dark"
-                                                    ? "text-slate-400"
-                                                    : "text-slate-500"
+                                                ? "text-slate-400"
+                                                : "text-slate-500"
                                                 }`}
                                         >
                                             No managers found.
